@@ -1,0 +1,136 @@
+/* ===== Colors: change these few lines to change the whole site's theme ===== */
+:root {
+  --main: #857212;        /* main color: headings, buttons (deep olive gold) */
+  --light: #fcf3ba;       /* light color: lines, hover (goose yellow) */
+  --text: #4a4530;        /* body text (warm dark brown) */
+  --muted: #8c8566;       /* secondary text */
+  --bg: #fffef6;          /* page background (very light cream) */
+  --nav1: #fefadd;        /* nav bar gradient: light goose yellow */
+  --nav2: #f5eea6;        /* nav bar gradient: goose yellow */
+  --hover: #a8932a;       /* button / link hover */
+}
+
+body { font-family: "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; line-height: 1.7; color: var(--text); background: var(--bg); }
+
+/* Top navigation bar */
+nav {
+  position: sticky; top: 0; z-index: 20;
+  background: linear-gradient(135deg, var(--nav1), var(--nav2));
+  display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px;
+  padding: 20px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+nav a, .dropdown summary {
+  display: inline-block;
+  color: var(--main); text-decoration: none; font-weight: bold;
+  padding: 8px 16px; border-radius: 20px;
+  background: rgba(255,255,255,0.9);
+  font-size: 1rem; line-height: 1.7;
+}
+nav a:hover, .dropdown summary:hover { background: var(--light); color: var(--main); }
+
+/* Dropdown menu "More" */
+.dropdown { position: relative; }
+.dropdown summary { list-style: none; cursor: pointer; user-select: none; -webkit-user-select: none; }
+.dropdown summary::-webkit-details-marker { display: none; }
+.dropdown summary::marker { content: ""; }
+.dropdown[open] summary { background: var(--light); }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; gap: 4px;
+  background: white; padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 30;
+}
+.dropdown-menu a { background: none; white-space: nowrap; text-align: center; }
+
+/* Content area */
+section { max-width: 720px; margin: 0 auto; padding: 60px 16px; }
+h1 { color: var(--main); margin-bottom: 4px; }
+h2 { color: var(--main); border-bottom: 2px solid var(--light); padding-bottom: 6px; }
+h3 { color: var(--main); margin-bottom: 4px; }
+#home { text-align: center; padding-top: 32px; }
+
+/* Photo */
+.photo {
+  display: block;
+  max-width: 100%;
+  max-height: 50vh;
+  width: auto; height: auto;
+  border-radius: 24px;
+  margin: 0 auto 16px;
+}
+
+/* Home tagline */
+.tagline { font-size: 1.05em; color: var(--muted); line-height: 1.9; }
+
+/* Links in content */
+section a { color: var(--main); text-decoration: none; border-bottom: 1px dashed var(--main); }
+section a:hover { color: var(--hover); border-bottom-style: solid; }
+
+/* Resume entries */
+.entry { margin-bottom: 22px; }
+.entry-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0 12px; }
+.entry-head strong { color: var(--text); }
+.entry-date { color: var(--muted); font-size: 0.9em; white-space: nowrap; }
+.entry p, .entry ul { margin: 4px 0; }
+.entry small { color: var(--muted); }
+
+/* Research cards (click to open) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.paper-card {
+  background: white; border: 1px solid var(--light); border-radius: 16px;
+  padding: 18px; cursor: pointer; text-align: left;
+  font: inherit; color: inherit;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.paper-card:hover { transform: translateY(-4px); }
+.paper-card span { display: block; font-weight: bold; color: var(--main); }
+.paper-card small { color: var(--muted); }
+
+/* Pop-up window */
+.paper-dialog {
+  max-width: 560px; width: 90%;
+  border: none; border-radius: 20px;
+  padding: 24px 28px;
+  background: var(--bg); color: var(--text);
+  line-height: 1.8;
+}
+.paper-dialog::backdrop { background: rgba(74,63,42,0.45); }
+.paper-dialog h3 { margin-top: 0; }
+.paper-info { margin-top: -4px; font-size: 0.9em; color: var(--muted); }
+.close-btn {
+  display: block; margin: 16px auto 0;
+  background: var(--main); color: white; border: none;
+  padding: 8px 24px; border-radius: 20px;
+  font: inherit; font-weight: bold; cursor: pointer;
+}
+.close-btn:hover { background: var(--hover); }
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.gallery img { width: 100%; height: auto; border-radius: 12px; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 24px 16px 32px;
+  margin-top: 40px;
+  border-top: 1px solid var(--light);
+  font-size: 0.85em;
+  color: var(--muted);
+}
+footer p { margin: 0; }
