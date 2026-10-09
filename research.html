@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karan Tsai | Research</title>
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+  <nav id="site-nav"></nav>
+  <script src="nav.js?v=1"></script>
+
+  <section>
+    <h2>Research</h2>
+    <p><b>Interests:</b> East Asian Security · International Security · International Political Economy · Conflict Resolution</p>
+    <p>Click a paper to read a short summary 📄</p>
+
+    <div class="card-grid">
+
+      <button class="paper-card" onclick="document.getElementById('paper1').showModal()">
+        <span>Tech Negotiation</span>
+        <small>TSMC's U.S. Expansion and Taiwan's Economic Strategy</small>
+      </button>
+
+      <button class="paper-card" onclick="document.getElementById('paper2').showModal()">
+        <span>Balancing Neutrality and Human Rights</span>
+        <small>Interpol's Institutional Dilemma and Reform Possibilities</small>
+      </button>
+
+      <button class="paper-card" onclick="document.getElementById('paper3').showModal()">
+        <span>Greece–Turkey Maritime Dispute</span>
+        <small>Conflict, Energy Competition, and Possible Resolution</small>
+      </button>
+
+    </div>
+
+    <dialog id="paper1" class="paper-dialog">
+      <h3>Tech Negotiation: TSMC's U.S. Expansion and Taiwan's Economic Strategy</h3>
+      <p class="paper-info">Topic: International Political Economy</p>
+      <p>Write a short summary of this paper here.</p>
+      <form method="dialog"><button class="close-btn">Close</button></form>
+    </dialog>
+
+    <dialog id="paper2" class="paper-dialog">
+      <h3>Balancing Neutrality and Human Rights: Interpol's Institutional Dilemma and Reform Possibilities</h3>
+      <p class="paper-info">Topic: International Organizations</p>
+      <p>Write a short summary of this paper here.</p>
+      <form method="dialog"><button class="close-btn">Close</button></form>
+    </dialog>
+
+    <dialog id="paper3" class="paper-dialog">
+      <h3>Greece–Turkey Maritime Dispute: Conflict, Energy Competition, and Possible Resolution</h3>
+      <p class="paper-info">Topic: Conflict Resolution</p>
+      <p>Write a short summary of this paper here.</p>
+      <form method="dialog"><button class="close-btn">Close</button></form>
+    </dialog>
+
+  </section>
+
+  <script>
+    // Click outside the pop-up window to close it
+    document.querySelectorAll("dialog").forEach(function (d) {
+      d.addEventListener("click", function (e) {
+        if (e.target === d) d.close();
+      });
+    });
+  </script>
+
+  <footer id="site-footer"></footer>
+  <script src="footer.js?v=1"></script>
+
+</body>
+</html>
